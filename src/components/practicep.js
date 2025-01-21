@@ -26,7 +26,9 @@ const QuizComponent = () => {
 
 
   const finalScore = () => {
-      const jsonContent = JSON.stringify(TwrongAnswers, null, 2);
+    const questionDetailsArray = TwrongAnswers.map(answer => answer.questionDetails);
+    const jsonContent = JSON.stringify(questionDetailsArray, null, 2);
+    
       const fileName = `wA${new Date().toLocaleString('en-US', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })}.json`;
       const blob = new Blob([jsonContent], { type: 'application/json' });
       const link = document.createElement('a');
