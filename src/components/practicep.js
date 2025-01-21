@@ -231,7 +231,7 @@ const handleContinue = () => {
                   "D. Antonio Vivaldi.",                                 
                   "Answer: B, C.",                                       
                   "Explanation",                                         
-                  "They are some well-known",                            
+                  "These are some well-known",                            
                   "writers of this genre."                               
                 ]                                                        
         ]`}
