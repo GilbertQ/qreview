@@ -6,6 +6,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import LoopIcon from '@mui/icons-material/Loop';
+import "./practicep.css";
 
 const QuizComponent = () => {
   const [quizData, setQuizData] = useState(null);
@@ -202,6 +203,7 @@ const handleContinue = () => {
   };
 
   const questionText = currentQuestion?.slice(0, currentQuestion.findIndex((line) => line.startsWith("A."))).join(' ') || '';
+  //const questionText = currentQuestion?.slice(0, currentQuestion.findIndex((line) => line.startsWith("A."))).join('\n') || '';
   const answerOptions = getAnswerOptions(currentQuestion);
   const explanationText = getExplanationText(currentQuestion);
   const percentageCorrect = questionsReviewed > 0 ? ((correctAnswers / questionsReviewed) * 100).toFixed(2) : 0;
@@ -254,7 +256,9 @@ const handleContinue = () => {
   function renderQuestionBox() {
     return (
       <Box id="preguntas">
-        <Typography variant="h6">{questionText}</Typography>
+       <Typography variant="h6" className="text-container">
+  {questionText}
+</Typography>
         <FormControl component="fieldset">
           {answerOptions.map((option, index) => (
             <FormControlLabel
